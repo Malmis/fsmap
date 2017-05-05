@@ -88,14 +88,14 @@ var osmOpenTopoMap = new L.TileLayer(
         minZoom: 3,
         maxZoom: 20,
         maxNativeZoom: 17,
-        attribution: 'Kartendaten: &copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende, <a href="http://viewfinderpanoramas.org">SRTM</a> | Kartendarstellung: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+        attribution: 'Kartendaten: &copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende, <a href="https://viewfinderpanoramas.org">SRTM</a> | Kartendarstellung: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
     }
 );
 
 var googleMaps = new L.TileLayer(
     'https://mt.google.com/vt?&x={x}&y={y}&z={z}',
     {
-        attribution: "<a href=\'http://maps.google.com/\'>Google</a> Maps",
+        attribution: "<a href=\'https://maps.google.com/\'>Google</a> Maps",
         subdomains: "1234",
         tileSize: 256,
         minZoom: 3,
@@ -107,7 +107,7 @@ var googleMaps = new L.TileLayer(
 var googleSatellite = new L.TileLayer(
     'https://mt.google.com/vt?lyrs=s&x={x}&y={y}&z={z}',
     {
-        attribution:"<a href=\'http://maps.google.com/\'>Google</a> Maps Satellite",
+        attribution:"<a href=\'https://maps.google.com/\'>Google</a> Maps Satellite",
         subdomains:"1234",
         tileSize:256,
         minZoom:3,
@@ -119,7 +119,7 @@ var googleSatellite = new L.TileLayer(
 var googleHybrid = new L.TileLayer(
     'https://mt.google.com/vt?lyrs=y&x={x}&y={y}&z={z}',
     {
-        attribution:"<a href=\'http://maps.google.com/\'>Google</a> Maps Satellite",
+        attribution:"<a href=\'https://maps.google.com/\'>Google</a> Maps Satellite",
         subdomains:"1234",
         tileSize:256,
         minZoom:3,
@@ -135,7 +135,7 @@ var bingMaps = new L.TileLayer.QuadKeyTileLayer(
         minZoom: 3,
         maxZoom: 20,
         maxNativeZoom: 19,
-        attribution: "<a href=\'http://maps.bing.com/\'>Bing</a> map data copyright Microsoft and its suppliers"
+        attribution: "<a href=\'https://maps.bing.com/\'>Bing</a> map data copyright Microsoft and its suppliers"
     }
 );
 
@@ -146,14 +146,14 @@ var bingAerial = new L.TileLayer.QuadKeyTileLayer(
         minZoom: 3,
         maxZoom: 20,
         maxNativeZoom: 19,
-        attribution: "<a href=\'http://maps.bing.com/\'>Bing</a> map data copyright Microsoft and its suppliers"
+        attribution: "<a href=\'https://maps.bing.com/\'>Bing</a> map data copyright Microsoft and its suppliers"
     }
 );
 
 var hillshading = new L.TileLayer(
     'https://tiles.wmflabs.org/hillshading/{z}/{x}/{y}.png',
     {
-        attribution: "Hillshading by <a href=\'http://hikebikemap.org/\'>Colin Marquardt / hikebikemap.de</a> from NASA SRTM data",
+        attribution: "Hillshading by <a href=\'https://hikebikemap.org/\'>Colin Marquardt / hikebikemap.de</a> from NASA SRTM data",
         minZoom: 3,
         maxNativeZoom: 16,
         overlay: true
@@ -260,7 +260,7 @@ var nvdb = new L.TileLayer(
 );
 
 var mapboxsat = new L.TileLayer(
-    'http://{s}.tiles.mapbox.com/v4/openstreetmap.map-inh7ifmo/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoib3BlbnN0cmVldG1hcCIsImEiOiJncjlmd0t3In0.DmZsIeOW-3x-C5eX-wAqTw',
+    'https://{s}.tiles.mapbox.com/v4/openstreetmap.map-inh7ifmo/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoib3BlbnN0cmVldG1hcCIsImEiOiJncjlmd0t3In0.DmZsIeOW-3x-C5eX-wAqTw',
     {
 		attribution: "MapBox Satellite",
 		maxZoom: 19,

@@ -360,21 +360,12 @@ let map = L.map('map', {
         {
             text: 'Mark OSM tile as dirty',
             callback: function (e) {
-<<<<<<< HEAD
-				tileUrl = getOsmMapnikUrl(e.latlng, map.getZoom())
+		tileUrl = getOsmMapnikUrl(e.latlng, map.getZoom())
                 $.ajax({
-					url: tileUrl + '/dirty',
-                    success: function (response) {
-						$('.leaflet-tile[src*="' + tileUrl.substr(8) + '"]').fadeTo("fast", .2);
-                        //alert(response);
-=======
-                tileUrl = getOsmMapnikUrl(e.latlng, map.getZoom())
-                $.ajax({
-                    url: tileUrl + '/dirty',
-                    success: function (response) {
-                        $('.leaflet-tile[src*="' + tileUrl.substr(8) + '"]').fadeTo("fast", .2);
-                        alert(response);
->>>>>>> 8b22a99588fa7b9a04f8e40076c83ca9c507c788
+			url: tileUrl + '/dirty',
+			success: function (response) {
+			$('.leaflet-tile[src*="' + tileUrl.substr(8) + '"]').fadeTo("fast", .2);
+                	//alert(response);
                     }
                 });
             }

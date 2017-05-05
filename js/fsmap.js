@@ -160,6 +160,114 @@ var hillshading = new L.TileLayer(
     }
 );
 
+var osmsehyddafull = new L.TileLayer(
+    'https://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png',
+    {
+		attribution: "&copy; OpenStreetMap contributors",
+		maxZoom: 18,
+		subdomains: 'abc'
+    }
+);
+
+var osmsehyddabase = new L.TileLayer(
+    'https://{s}.tile.openstreetmap.se/hydda/base/{z}/{x}/{y}.png',
+    {
+        attribution: "&copy; OpenStreetMap contributors",
+        maxZoom: 18,
+        subdomains: 'abc'
+    }
+);
+
+var osmsehyddarola = new L.TileLayer(
+    'https://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}.png',
+    {
+		attribution: "&copy; OpenStreetMap contributors",
+		maxZoom: 18,
+		subdomains: 'abc',
+		opacity: 0.5,
+		overlay: true
+    }
+);
+
+var osmse = new L.TileLayer(
+    'https://{s}.tile.openstreetmap.se/osm/{z}/{x}/{y}.png',
+    {
+        attribution: "&copy; OpenStreetMap contributors",
+        maxZoom: 18,
+        subdomains: 'abc'
+    }
+);
+
+var ekokartaoverlay = new L.TileLayer(
+    'https://mapproxy.openstreetmap.se/tiles/1.0.0/ek_EPSG3857/{z}/{x}/{y}.jpeg',
+    {
+		attribution: "Ekonomiska kartan 1950-1980",
+		maxZoom: 20,
+		opacity: 0.5,
+		overlay: true
+    }
+);
+
+var ekokarta = new L.TileLayer(
+    'https://mapproxy.openstreetmap.se/tiles/1.0.0/ek_EPSG3857/{z}/{x}/{y}.jpeg',
+    {
+        attribution: "Ekonomiska kartan 1950-1980",
+        maxZoom: 18
+    }
+);
+
+var flyghels2014 = new L.TileLayer(
+    'https://mapproxy.openstreetmap.se/tiles/1.0.0/hborg2014_EPSG3857/{z}/{x}/{y}.jpeg',
+    {
+		attribution: "Flygfoton Helsingborg 2014",
+		maxZoom: 18,
+		minZoom: 8,
+		overlay: true,
+		opacity: 0.5
+    }
+);
+
+var flyghels2016 = new L.TileLayer(
+    'https://mapproxy.openstreetmap.se/tiles/1.0.0/hborg2016_EPSG3857/{z}/{x}/{y}.jpeg',
+    {
+        attribution: "Flygfoton Helsingborg 2016",
+        maxZoom: 18,
+		minZoom: 8,
+        overlay: true,
+        opacity: 0.5
+    }
+);
+
+var flygkalm = new L.TileLayer(
+    'https://mapproxy.openstreetmap.se/tiles/1.0.0/kalmar2012_EPSG3857/{z}/{x}/{y}.jpeg',
+    {
+        attribution: "Flygfoton Kalmar 2012",
+        maxZoom: 20,
+		minZoom: 8,
+		overlay: true,
+		opacity: 0.5
+    }
+);
+
+var nvdb = new L.TileLayer(
+    'https://mapproxy.openstreetmap.se/tiles/1.0.0/nvdb/EPSG3857/{z}/{x}/{y}.png',
+    {
+        attribution: "NVDB hastigheter och cykelvägar",
+        maxZoom: 20,
+		minZoom: 8,
+        overlay: true
+    }
+);
+
+var mapboxsat = new L.TileLayer(
+    'http://{s}.tiles.mapbox.com/v4/openstreetmap.map-inh7ifmo/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoib3BlbnN0cmVldG1hcCIsImEiOiJncjlmd0t3In0.DmZsIeOW-3x-C5eX-wAqTw',
+    {
+		attribution: "MapBox Satellite",
+		maxZoom: 19,
+		subdomains: 'abc'
+	}
+);
+
 var baseLayers = {
     "OpenStreetMap": osmMapnik,
     "OpenTopoMap": osmOpenTopoMap,
@@ -168,12 +276,31 @@ var baseLayers = {
     "Google Maps Hybrid": googleHybrid,
     "Bing Maps": bingMaps,
     "Bing Aerial View": bingAerial,
+    "OSM.se Hydda Full": osmsehyddafull,
+    "OSM.se Hydda Bas": osmsehyddabase,
+    "OSM.se Mapnik": osmse,
+    "Ekonomiska kartan": ekokarta,
+	// "MapBox Satellite": mapboxsat,
 };
 
 var overlayLayers = {
-    "Hillshading": hillshading,
-    "OpenStreetMap (opacity=0.5)": osmMapnikOverlay,
     "Tile Borders": new TileBorderLayer(),
+    // "Hillshading <input id='slider1' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": hillshading,
+	"Hillshading": hillshading,
+    // "OpenStreetMap <input id='slider2' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": osmMapnikOverlay,
+	"OpenStreetMap (opacity 0.5)": osmMapnikOverlay,
+    // "Ekonomiska kartan <input id='slider3' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": ekokartaoverlay,
+	"Ekonomiska kartan (opacity 0.5)": ekokartaoverlay,
+    // "Flygfoton Helsingborg 2014 <input id='slider4' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": flyghels2014,
+	"Flygfoton Helsingborg 2014 (opacity 0.5)": flyghels2014,
+	// "Flygfoton Helsingborg 2016 <input id='slider5' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": flyghels2016,
+	"Flygfoton Helsingborg 2016 (opacity 0.5)": flyghels2016,
+    // "Flygfoton Kalmar 2012 <input id='slider6' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": flygkalm,
+	"Flygfoton Kalmar 2012 (opacity 0.5)": flygkalm,
+    // "OSM.se Hydda vägar och etiketter <input id='slider7' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": osmsehyddarola,
+	"OSM.se Hydda vägar och etiketter": osmsehyddarola,
+	// "NVDB hastigheter och cykelvägar <input id='slider8' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": nvdb,
+	"NVDB hastigheter och cykelvägar": nvdb,
 };
 
 /*
@@ -233,12 +360,21 @@ let map = L.map('map', {
         {
             text: 'Mark OSM tile as dirty',
             callback: function (e) {
+<<<<<<< HEAD
+				tileUrl = getOsmMapnikUrl(e.latlng, map.getZoom())
+                $.ajax({
+					url: tileUrl + '/dirty',
+                    success: function (response) {
+						$('.leaflet-tile[src*="' + tileUrl.substr(8) + '"]').fadeTo("fast", .2);
+                        //alert(response);
+=======
                 tileUrl = getOsmMapnikUrl(e.latlng, map.getZoom())
                 $.ajax({
                     url: tileUrl + '/dirty',
                     success: function (response) {
                         $('.leaflet-tile[src*="' + tileUrl.substr(8) + '"]').fadeTo("fast", .2);
                         alert(response);
+>>>>>>> 8b22a99588fa7b9a04f8e40076c83ca9c507c788
                     }
                 });
             }
@@ -477,4 +613,45 @@ fileLayerControl.loader.on('data:loaded', function (e) {
 
     // rotate to next color
     fileLayerColors.push(fileLayerColors.shift());
+});
+
+$(function () {
+    $('#slider1').on('change', function () {
+        hillshading.setOpacity($('#slider1').val());
+    });
+});
+$(function () {
+    $('#slider2').on('change', function () {
+        osmMapnikOverlay.setOpacity($('#slider2').val());
+    });
+});
+$(function () {
+    $('#slider3').on('change', function () {
+        ekokartaoverlay.setOpacity($('#slider3').val());
+    });
+});
+$(function () {
+    $('#slider4').on('change', function () {
+        flyghels2014.setOpacity($('#slider4').val());
+    });
+});
+$(function () {
+    $('#slider5').on('change', function () {
+        flyghels2016.setOpacity($('#slider5').val());
+    });
+});
+$(function () {
+    $('#slider6').on('change', function () {
+        flygkalm.setOpacity($('#slider6').val());
+    });
+});
+$(function () {
+    $('#slider7').on('change', function () {
+        osmsehyddarola.setOpacity($('#slider7').val());
+    });
+});
+$(function () {
+    $('#slider8').on('change', function () {
+        nvdb.setOpacity($('#slider8').val());
+    });
 });

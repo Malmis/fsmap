@@ -268,6 +268,8 @@ var mapboxsat = new L.TileLayer(
 	}
 );
 
+var notes = new leafletOsmNotes();
+
 var baseLayers = {
     "OpenStreetMap": osmMapnik,
     "OpenTopoMap": osmOpenTopoMap,
@@ -280,27 +282,28 @@ var baseLayers = {
     "OSM.se Hydda Bas": osmsehyddabase,
     "OSM.se Mapnik": osmse,
     "Ekonomiska kartan": ekokarta,
-	// "MapBox Satellite": mapboxsat,
+    // "MapBox Satellite": mapboxsat,
 };
 
 var overlayLayers = {
     "Tile Borders": new TileBorderLayer(),
-    // "Hillshading <input id='slider1' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": hillshading,
+	// "Hillshading <input id='slider1' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": hillshading,
 	"Hillshading": hillshading,
-    // "OpenStreetMap <input id='slider2' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": osmMapnikOverlay,
+	// "OpenStreetMap <input id='slider2' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": osmMapnikOverlay,
 	"OpenStreetMap (opacity 0.5)": osmMapnikOverlay,
-    // "Ekonomiska kartan <input id='slider3' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": ekokartaoverlay,
+	// "Ekonomiska kartan <input id='slider3' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": ekokartaoverlay,
 	"Ekonomiska kartan (opacity 0.5)": ekokartaoverlay,
-    // "Flygfoton Helsingborg 2014 <input id='slider4' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": flyghels2014,
+	// "Flygfoton Helsingborg 2014 <input id='slider4' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": flyghels2014,
 	"Flygfoton Helsingborg 2014 (opacity 0.5)": flyghels2014,
 	// "Flygfoton Helsingborg 2016 <input id='slider5' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": flyghels2016,
 	"Flygfoton Helsingborg 2016 (opacity 0.5)": flyghels2016,
-    // "Flygfoton Kalmar 2012 <input id='slider6' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": flygkalm,
+	// "Flygfoton Kalmar 2012 <input id='slider6' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": flygkalm,
 	"Flygfoton Kalmar 2012 (opacity 0.5)": flygkalm,
-    // "OSM.se Hydda vägar och etiketter <input id='slider7' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": osmsehyddarola,
+	// "OSM.se Hydda vägar och etiketter <input id='slider7' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": osmsehyddarola,
 	"OSM.se Hydda vägar och etiketter": osmsehyddarola,
 	// "NVDB hastigheter och cykelvägar <input id='slider8' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": nvdb,
 	"NVDB hastigheter och cykelvägar": nvdb,
+	"OSM Notes": notes,
 };
 
 /*
@@ -576,7 +579,12 @@ let fileLayerControl = L.Control.fileLayerLoad({
         },
 
         pointToLayer: function (feature, latlng) {
-            return L.circleMarker(latlng);
+          return L.circleMarker(latlng);
+       //     return L.circle(latlng, 161, {fill:false});
+//	    return L.circleMarker(latlng, {
+//		radius: 161,
+//		fill: false,
+//	    });
         },
 
         onEachFeature: function (feature, layer) {

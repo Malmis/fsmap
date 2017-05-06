@@ -163,9 +163,9 @@ var hillshading = new L.TileLayer(
 var osmsehyddafull = new L.TileLayer(
     'https://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png',
     {
-		attribution: "&copy; OpenStreetMap contributors",
-		maxZoom: 18,
-		subdomains: 'abc'
+        attribution: "&copy; OpenStreetMap contributors",
+        maxZoom: 18,
+        subdomains: 'abc'
     }
 );
 
@@ -181,11 +181,11 @@ var osmsehyddabase = new L.TileLayer(
 var osmsehyddarola = new L.TileLayer(
     'https://{s}.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}.png',
     {
-		attribution: "&copy; OpenStreetMap contributors",
-		maxZoom: 18,
-		subdomains: 'abc',
-		opacity: 0.5,
-		overlay: true
+        attribution: "&copy; OpenStreetMap contributors",
+        maxZoom: 18,
+        subdomains: 'abc',
+        opacity: 0.5,
+        overlay: true
     }
 );
 
@@ -201,10 +201,10 @@ var osmse = new L.TileLayer(
 var ekokartaoverlay = new L.TileLayer(
     'https://mapproxy.openstreetmap.se/tiles/1.0.0/ek_EPSG3857/{z}/{x}/{y}.jpeg',
     {
-		attribution: "Ekonomiska kartan 1950-1980",
-		maxZoom: 20,
-		opacity: 0.5,
-		overlay: true
+        attribution: "Ekonomiska kartan 1950-1980",
+        maxZoom: 20,
+        opacity: 0.5,
+        overlay: true
     }
 );
 
@@ -219,11 +219,11 @@ var ekokarta = new L.TileLayer(
 var flyghels2014 = new L.TileLayer(
     'https://mapproxy.openstreetmap.se/tiles/1.0.0/hborg2014_EPSG3857/{z}/{x}/{y}.jpeg',
     {
-		attribution: "Flygfoton Helsingborg 2014",
-		maxZoom: 18,
-		minZoom: 8,
-		overlay: true,
-		opacity: 0.5
+        attribution: "Flygfoton Helsingborg 2014",
+        maxZoom: 18,
+        minZoom: 8,
+        overlay: true,
+        opacity: 0.5
     }
 );
 
@@ -232,7 +232,7 @@ var flyghels2016 = new L.TileLayer(
     {
         attribution: "Flygfoton Helsingborg 2016",
         maxZoom: 18,
-		minZoom: 8,
+        minZoom: 8,
         overlay: true,
         opacity: 0.5
     }
@@ -243,9 +243,9 @@ var flygkalm = new L.TileLayer(
     {
         attribution: "Flygfoton Kalmar 2012",
         maxZoom: 20,
-		minZoom: 8,
-		overlay: true,
-		opacity: 0.5
+        minZoom: 8,
+        overlay: true,
+        opacity: 0.5
     }
 );
 
@@ -254,7 +254,7 @@ var nvdb = new L.TileLayer(
     {
         attribution: "NVDB hastigheter och cykelvägar",
         maxZoom: 20,
-		minZoom: 8,
+        minZoom: 8,
         overlay: true
     }
 );
@@ -262,10 +262,120 @@ var nvdb = new L.TileLayer(
 var mapboxsat = new L.TileLayer(
     'https://{s}.tiles.mapbox.com/v4/openstreetmap.map-inh7ifmo/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoib3BlbnN0cmVldG1hcCIsImEiOiJncjlmd0t3In0.DmZsIeOW-3x-C5eX-wAqTw',
     {
-		attribution: "MapBox Satellite",
-		maxZoom: 19,
-		subdomains: 'abc'
-	}
+        attribution: "MapBox Satellite",
+        maxZoom: 19,
+        subdomains: 'abc'
+    }
+);
+
+var hittastreet = new L.TileLayer(
+    'https://static.hitta.se/tile/v3/0/{z}/{x}/{y}',
+    {
+        maxZoom: 21,
+        tms: true,
+        attribution: "<a href=\'https://www.hitta.se/\'>Hitta.se</a>",
+    }
+);
+
+var hittasat = new L.TileLayer(
+    'https://static.hitta.se/tile/v3/1/{z}/{x}/{y}',
+    {
+        maxZoom: 21,
+        tms: true,
+        attribution: "<a href=\'https://www.hitta.se/\'>Hitta.se</a>"
+    }
+);
+
+var hittater = new L.TileLayer(
+    'https://static.hitta.se/tile/v3/4/{z}/{x}/{y}',
+    {
+        maxZoom: 21,
+        tms: true,
+        attribution: "<a href=\'https://www.hitta.se/\'>Hitta.se</a>"
+    }
+);
+
+var eniro = new L.TileLayer(
+    'https://map0{s}.eniro.no/geowebcache/service/tms1.0.0/map/{z}/{x}/{y}.png',
+    {
+        subdomains: '1234',
+        maxZoom: 21,
+        tms: true,
+        attribution: "<a href=\'https://www.eniro.se/\'>Eniro Maps</a>"
+    }
+);
+
+var eniroaerial = new L.TileLayer(
+    'https://map0{s}.eniro.no/geowebcache/service/tms1.0.0/aerial/{z}/{x}/{y}.png',
+    {
+        subdomains: '1234',
+        maxZoom: 21,
+        tms: true,
+        attribution: "<a href=\'https://www.eniro.se/\'>Eniro Maps</a>"
+    }
+);
+
+var enironautical = new L.TileLayer(
+    'https://map0{s}.eniro.no/geowebcache/service/tms1.0.0/nautical/{z}/{x}/{y}.png',
+    {
+        subdomains: '1234',
+        maxZoom: 21,
+        tms: true,
+        attribution: "<a href=\'https://www.eniro.se/\'>Eniro Maps</a>"
+    }
+);
+
+var eniroold = new L.TileLayer(
+    'https://map0{s}.eniro.no/geowebcache/service/tms1.0.0/se_aerial_1950_60s/{z}/{x}/{y}.jpeg',
+    {
+        subdomains: '1234',
+        maxZoom: 21,
+        tms: true,
+        attribution: "<a href=\'https://www.eniro.se/\'>Eniro Maps</a>"
+    }
+);
+
+var enirorast = new L.TileLayer(
+    'https://map0{s}.eniro.no/geowebcache/service/tms1.0.0/se_reststop/{z}/{x}/{y}.png',
+    {
+        subdomains: '1234',
+        maxZoom: 22,
+        tms: true,
+        overlay: true,
+        attribution: "<a href=\'https://www.eniro.se/\'>Eniro Maps</a>"
+    }
+);
+
+
+var opensled = new L.TileLayer(
+    'http://overlay.opensledmap.se/{z}/{x}/{y}.png',
+    {
+        overlay: true,
+        attribution: "&copy; OpenStreetMap contributors"
+    }
+);
+
+var skoterleder = new L.TileLayer(
+    'http://overl.skoterleder.org/tiles/{z}/{x}/{y}.png',
+    {
+        overlay: true,
+        attribution: "<a href=\'https://skoterleder.org/\'>skoterleder.org</a> & &copy; OpenStreetMap contributors"
+    }
+);
+
+var thunderforest = new L.TileLayer(
+    'http://{s}.tile3.opencyclemap.org/landscape/{z}/{x}/{y}.png',
+    {
+        subdomains: 'abc',
+        attribution: "Landscape map by Thunderforest & &copy; OpenStreetMap contributors CC-BY-SA 2.0"
+    }
+);
+
+var lmtopo = new L.TileLayer(
+    'http://mapproxy.project-gc.com:3857/tiles/1.0.0/LM-topo/lm_grid/{z}/{x}/{y}.jpeg',
+    {
+        attribution: "Topografisk Webbkarta Lantmäteriet CC-BY 4.0"
+    }
 );
 
 var notes = new leafletOsmNotes();
@@ -283,27 +393,39 @@ var baseLayers = {
     "OSM.se Mapnik": osmse,
     "Ekonomiska kartan": ekokarta,
     // "MapBox Satellite": mapboxsat,
+    "Hitta.se Väg": hittastreet,
+    "Hitta.se Satellit": hittasat,
+    "Hitta.se Terräng": hittater,
+    "Eniro Väg": eniro,
+    "Eniro Satellit": eniroaerial,
+    "Eniro Sjökort": enironautical,
+    "Eniro Sat 1950-60": eniroold,
+    "Thunderforest": thunderforest,
+    "Lantmäteriet Topografisk": lmtopo,
 };
 
 var overlayLayers = {
     "Tile Borders": new TileBorderLayer(),
-	// "Hillshading <input id='slider1' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": hillshading,
-	"Hillshading": hillshading,
-	// "OpenStreetMap <input id='slider2' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": osmMapnikOverlay,
-	"OpenStreetMap (opacity 0.5)": osmMapnikOverlay,
-	// "Ekonomiska kartan <input id='slider3' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": ekokartaoverlay,
-	"Ekonomiska kartan (opacity 0.5)": ekokartaoverlay,
-	// "Flygfoton Helsingborg 2014 <input id='slider4' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": flyghels2014,
-	"Flygfoton Helsingborg 2014 (opacity 0.5)": flyghels2014,
-	// "Flygfoton Helsingborg 2016 <input id='slider5' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": flyghels2016,
-	"Flygfoton Helsingborg 2016 (opacity 0.5)": flyghels2016,
-	// "Flygfoton Kalmar 2012 <input id='slider6' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": flygkalm,
-	"Flygfoton Kalmar 2012 (opacity 0.5)": flygkalm,
-	// "OSM.se Hydda vägar och etiketter <input id='slider7' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": osmsehyddarola,
-	"OSM.se Hydda vägar och etiketter": osmsehyddarola,
-	// "NVDB hastigheter och cykelvägar <input id='slider8' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": nvdb,
-	"NVDB hastigheter och cykelvägar": nvdb,
-	"OSM Notes": notes,
+    // "Hillshading <input id='slider1' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": hillshading,
+    "Hillshading": hillshading,
+    // "OpenStreetMap <input id='slider2' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": osmMapnikOverlay,
+    "OpenStreetMap (opacity 0.5)": osmMapnikOverlay,
+    // "Ekonomiska kartan <input id='slider3' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": ekokartaoverlay,
+    "Ekonomiska kartan (opacity 0.5)": ekokartaoverlay,
+    // "Flygfoton Helsingborg 2014 <input id='slider4' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": flyghels2014,
+    "Flygfoton Helsingborg 2014 (opacity 0.5)": flyghels2014,
+    // "Flygfoton Helsingborg 2016 <input id='slider5' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": flyghels2016,
+    "Flygfoton Helsingborg 2016 (opacity 0.5)": flyghels2016,
+    // "Flygfoton Kalmar 2012 <input id='slider6' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": flygkalm,
+    "Flygfoton Kalmar 2012 (opacity 0.5)": flygkalm,
+    // "OSM.se Hydda vägar och etiketter <input id='slider7' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": osmsehyddarola,
+    "OSM.se Hydda vägar och etiketter": osmsehyddarola,
+    // "NVDB hastigheter och cykelvägar <input id='slider8' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": nvdb,
+    "NVDB hastigheter och cykelvägar": nvdb,
+    "OSM Notes": notes,
+    "Open Sled Map": opensled,
+    "Skoterleder.org": skoterleder,
+    "Eniro Rastplatser": enirorast,
 };
 
 /*

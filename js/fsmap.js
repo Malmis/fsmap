@@ -258,7 +258,15 @@ var nvdb = new L.TileLayer(
         overlay: true
     }
 );
-
+var nvdb2 = new L.TileLayer(
+    'https://mapproxy.openstreetmap.se/tiles/1.0.0/nvdb_names/EPSG3857/{z}/{x}/{y}.png',
+    {
+        attribution: "NVDB Gatunamn",
+        maxZoom: 20,
+        minZoom: 8,
+        overlay: true
+    }
+);
 var mapboxsat = new L.TileLayer(
     'https://{s}.tiles.mapbox.com/v4/openstreetmap.map-inh7ifmo/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoib3BlbnN0cmVldG1hcCIsImEiOiJncjlmd0t3In0.DmZsIeOW-3x-C5eX-wAqTw',
     {
@@ -422,6 +430,7 @@ var overlayLayers = {
     "OSM.se Hydda vägar och etiketter": osmsehyddarola,
     // "NVDB hastigheter och cykelvägar <input id='slider8' type='range' min='0' max='1' step='0.1' value='0.5' style='width: 4em;'/>": nvdb,
     "NVDB hastigheter och cykelvägar": nvdb,
+    "NVDB Gatunamn": nvdb2,
     "OSM Notes": notes,
     "Open Sled Map": opensled,
     "Skoterleder.org": skoterleder,
